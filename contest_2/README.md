@@ -1,5 +1,4 @@
-1) Сборка и запуск:
-cd ..
+1) Сборка и запуск из папки "..\contest_2":
 g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe
 .\flot.exe
 Далее программа ждёт ввод.
@@ -29,4 +28,49 @@ g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe
   6.1) Класс электовелосипедов (ElectricBike), который потреблет энергию. Для него добавлена команда add ebike.
   6.2) В Park добавлен метод  GetCreateSpec, с помощью которого несколько объектов могут использовать один ModelSpec.
   6.3) Подсчёт энергии в Park через dynamic_cast по IEnergyConsumer, чтобы сразу пропускать неэлектрические типы.
-7) Использовал ИИ, чтобы понять зачем нужны .hpp, как настроить зависимости в плюсах, объеденить и запустить все файлы в одной сборке(никогда с этим не работал), а также для генерации примеров для отладки кода.
+7) Список команд:
+add scooter <id> <name> <energy> <score>	- Добавить электросамокат
+add bike <id> <name> <score>	            - Добавить обычный велосипед
+add ebike <id> <name> <energy> <score>	  - Добавить электровелосипед (креативная часть)
+add helmet <id> <name>	                  - Добавить шлем
+add dock <id> <name> <energy>             -	Добавить док-станцию (вещь, потребляет энергию)
+energy	                                  - Напечатать суммарную суточную энергию парка (double)
+novice	                                  - Список техники для новичков (имя + id), у которой score >= 6
+list	                                    - Все позиции баланса
+focus <id>                                -	Поставить единицу техники на «витрину»
+show_focus	                              - Напечатать текущую витрину
+remove <id>                             	- Убрать позицию из парка
+quit	                                    - Выход из программы
+8) Премер использования.
+Ввод:
+add scooter S-1 ModelX 2.5 8
+add bike B-1 City 4
+add ebike E-1 Turbo 5.0 7
+add helmet H-1 Pro
+add dock D-1 Hub 10.0
+add scooter S-2 brokenX 1.0 9
+list
+novice
+energy
+focus S-1
+show_focus
+remove S-1
+show_focus
+energy
+quit
+
+Вывод:
+error: inspection rejected: brokenX
+B-1 City
+D-1 Hub
+E-1 Turbo
+H-1 Pro
+S-1 ModelX
+S-1 ModelX
+E-1 Turbo
+17.5
+S-1 ModelX
+removed or expired
+15.0
+
+9) Использовал ИИ, чтобы понять зачем нужны .hpp, как настроить зависимости в плюсах, объеденить и запустить все файлы в одной сборке(никогда с этим не работал).

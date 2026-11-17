@@ -1,10 +1,6 @@
 1) Сборка и запуск из папки "..\contest_2":  
 g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe  
 .\flot.exe  
-1) Сборка и запуск:
-cd ..  
-g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe  
-.\flot.exe  
 Далее программа ждёт ввод.
 2) Схема наследования:
   2.1) База - IInventoryItem(абстрактный);

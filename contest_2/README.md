@@ -1,6 +1,6 @@
-1) Сборка и запуск из папки "..\contest_2":
-g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe
-.\flot.exe
+1) Сборка и запуск из папки "..\contest_2":  
+g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe  
+.\flot.exe  
 1) Сборка и запуск:
 cd ..  
 g++ -std=c++17 cpp/*.cpp -I hpp -o flot.exe  
